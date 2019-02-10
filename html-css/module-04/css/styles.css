@@ -271,24 +271,27 @@ h2.latest-news-title::after {
     width: 350px;
     height: 262px;  
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center;
     margin-bottom: 11px;
 }
 
 .latest-news-items:nth-child(3n+1) .latest-news-image {    
     background-image: url(../img/blog/desktop.jpg);
-    background-size: 130%;
+    /* background-size: 130%; */
+    background-size: cover;
 }
 
 .latest-news-items:nth-child(3n+2) .latest-news-image {    
     background-image: url(../img/blog/girls.jpg);
-    background-size: 150%;
+    /* background-size: 150%; */
+    background-size: cover;
 }
 
 .latest-news-items:nth-child(3n) .latest-news-image {    
     background-image: url(../img/blog/bus.jpg);
-    background-size: 120%;
-    background-position: center;
+    /* background-size: 120%; */
+    background-size: cover;
+    /* background-position: center; */
 }
  
 .latest-news-category {
