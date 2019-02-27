@@ -413,6 +413,10 @@ font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-style: italic;
     font-size: 14px;
+    color: #000;
+}
+
+.page-footer[placeholder] {
     color: #cccccc;
 }
 
