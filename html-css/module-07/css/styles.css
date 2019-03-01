@@ -176,6 +176,13 @@
     right: 0;
 }
 
+.contact-us-contain form {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .contact-us-title {
     color: #ffffff;
     margin-bottom: 76px;
