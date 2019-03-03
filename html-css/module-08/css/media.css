@@ -1,0 +1,151 @@
+/* 
+!-- 320px --!
+max-width: 747px
+
+
+!-- 748px --!
+min-width: 748px
+max-width: 939px
+
+
+!-- 940px --!
+min-width: 940px
+
+*/
+
+/* media */
+@media (min-width: 748px) {
+    .container {
+        max-width: 748px;
+        margin: 0 auto;
+    }
+
+    .site-navigation {
+        width: 100%;
+        height: 700px;
+        margin-bottom: 72px;
+        padding-top: 38px;  
+        background-image: url(../img/tablet/bg-tablet.jpg);
+        background-position-x: center; 
+    }
+
+    .top-items {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 40px 148px;
+    }
+
+    .login-menu {
+        margin: 0;
+        padding-top: 0;
+    }
+    
+    .site-logo {
+        margin: 0;
+    }
+
+    .find-partner-title {
+        width: 503px;
+        margin: 0 auto;
+        font-size: 51.97px;
+    }
+
+    .find-partner-title span {
+        width: 404px;
+        margin: 36px auto 36px;
+        font-size: 24px;
+    }
+
+    .find-partner-button {
+        width: 226px;
+    }
+
+
+    /* MEET A PARTNER SECTION */
+
+    .partner-title {
+        width: 100%;
+        margin: 0 auto 34px;
+        font-size: 22px;
+    }
+
+    .partner-list {
+        max-width: 492px;
+        margin: 0 auto;
+        margin-bottom: 38px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .partner-item {
+        width: 236px;
+    }
+
+    .partner-item:nth-child(4n+2) {
+        order: 2;
+    }
+
+    .partner-item:nth-child(4n) {
+        order: 3;
+    }
+
+    .partner-item:not(:nth-child(n+3)) {
+        margin: 0 auto 56px;
+    }
+
+    .partner-img-container {
+        margin-bottom: 22px;
+    }
+}
+
+/* descktop */
+@media (min-width: 940px) {
+
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .site-navigation {
+        width: auto;
+        margin-bottom: 70px;
+        background-image: url(../img/descktop/bg-descktop.jpg);
+    }
+
+    .top-items {
+        margin: 0 auto 148px;
+        width: 940px;
+    }
+
+    /* MEET A PARTNER SECTION */
+
+    .partner-title {
+        width: 100%;
+        margin: 0 auto 36px;
+        font-size: 22px;
+    }
+
+    .partner-list {
+        max-width: 1440px;
+        width: 100%;
+        margin-bottom: 38px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .partner-item:nth-child(n) {
+        width: 220px;
+        margin: 0;
+    }
+
+    .partner-img-container {
+        margin-bottom: 22px;
+    }
+
+    .other-partner-button {
+        margin-bottom: 72px;
+    }
+}
