@@ -1,0 +1,242 @@
+@import 'fonts.css';
+
+
+.login-menu,
+.meet-partner-list {
+    list-style-type: none;
+}
+
+.login-menu a {
+    text-decoration: none;
+}
+
+.site-navigation {
+    max-width: 320px;
+    width: 100%;
+    height: 540px;
+    margin: 0 auto;
+    margin-bottom: 68px;
+    background-image: url(../img/bg-top.jpg);
+    background-repeat: no-repeat;
+}
+
+.top-menu {
+    margin: 0 auto;
+    padding-top: 20px;
+    margin-bottom: 34px;
+}
+
+.login-menu {
+    max-width: 151px;
+    height: 36px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 118px;
+}
+
+.login-menu a,
+.site-logo,
+.find-partner-title,
+.find-partner-button,
+.meet-partner-title,
+.partner-name,
+.meet-partner-button {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    line-height: 1.2em;
+}
+
+.login-menu li:last-child {
+    min-width: 90px;
+    height: 36px;
+    border: 2px solid #ffffff;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-menu a {    
+    font-size: 14px;    
+    color: #ffffff;
+}
+
+.site-logo {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 177px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+}
+
+.find-partner-title {
+    margin-bottom: 18px;
+}
+
+.find-partner-title span:first-child {
+    display: block;
+    text-transform: uppercase;
+    width: 291px;
+    padding: 0;
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.2em;
+}
+
+.find-partner-title span:last-child {
+    display: block;
+    text-transform: none;
+    max-width: 217px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.2em;
+    color: #ffffff;
+}
+
+.font-rob-l {
+    font-family: 'Roboto';
+    font-weight: 300;
+    line-height: 1.2em;
+}
+
+.btn-1 {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 20px;    
+    font-size: 14px;
+}
+
+.find-partner-button {    
+    background: #ff4e50;
+    border: none;
+    color: #ffffff;
+}
+
+
+
+/* MEET A PARTENER SECTION */
+
+.page-meet-partner {
+    margin-bottom: 57px;
+}
+
+.meet-partner-title {
+    max-width: 268px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.2em;
+    color: #333333;
+}
+
+.meet-partner-list {
+    margin: 0 auto;
+    margin-bottom: 28px;
+    
+}
+
+.meet-partner-item {
+    margin: 0 auto;
+}
+
+.meet-partner-item:not(:last-child) {
+    margin-bottom: 28px;
+}
+
+.partner-img::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.partner-img {
+    max-width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.partner-img::after {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    bottom: 0;    
+    border-radius: 50%;
+}
+
+.meet-partner-item:nth-child(4n+1) .partner-img::after {
+    content: url(../img/icons/tv.png);
+    background: #ff4e50;
+}
+
+.meet-partner-item:nth-child(4n+2) .partner-img::after {
+    content: url(../img/icons/bottle.png);
+    background: #ffa507;
+
+}
+
+.meet-partner-item:nth-child(4n+3) .partner-img::after {
+    content: url(../img/icons/cup.png);
+    background: #1cd7ad;
+}
+
+.meet-partner-item:nth-child(4n+4) .partner-img::after {
+    content: url(../img/icons/telegram.png);
+    display: block;
+    text-align: center;
+    padding: 7px 3px 7px 0;
+    background: #4e73db;
+}
+
+.partner-img img {
+    border-radius: 50%;
+}
+
+
+.partner-name {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2em;
+    margin-bottom: 18px;
+}
+
+.partner-descr {
+    max-width: 217px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+}
+
+.meet-partner-button {
+    background: none;
+    height: 40px;
+    border: 2px solid #ff5254;
+    color: #ff4e50;
+}

@@ -1,0 +1,128 @@
+@media (min-width: 768px) {
+    
+    .container {
+        max-width: 768px;
+    }
+    
+    .site-navigation {
+        max-width: 768px;
+        height: 700px;
+        background-image: url(../img/bg-tablet.jpg);
+        margin-bottom: 68px;
+    }
+
+    .top-menu {
+        padding-top: 38px;
+        padding-left: 65px;
+        padding-right: 65px;
+        margin-bottom: 148px;
+    }
+
+    
+
+    .login-menu,
+    .site-logo {
+        margin: 0;
+    }
+
+    .site-logo {
+        text-align: left;
+        line-height: 1.8;
+        margin-right: 0;
+        margin-right: auto;
+    }    
+
+    .find-partner-title {
+        margin: 0 -15px 36px;
+    }
+
+    .find-partner-title span:first-child {
+        width: 100%;
+        font-size: 52px;
+        margin-bottom: 34px;
+    }
+
+    .find-partner-title span:last-child {
+        max-width: 100%;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .btn-1 {
+        width: 226px;
+    }
+
+
+
+    /* MEET A PARTENER SECTION */
+    
+    .page-meet-partner {
+        margin-bottom: 40px;
+    }
+
+    .meet-partner-title {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .meet-partner-list {
+        margin-bottom: 38px;
+    }
+
+    .meet-partner-item:not(:nth-child(2n+2)) {
+        margin-bottom: 58px;
+    }
+
+    .meet-partner-item:not(:nth-child(2n+1)) {
+        margin-bottom: 0;
+    }
+
+    .meet-partner-button {
+        width: 192px;
+    }
+
+
+}
+
+
+@media (min-width: 940px) {
+
+
+    .container {
+        max-width: 940px;
+    }
+
+    .site-navigation {
+        max-width: 1440px;
+        background-image: url(../img/bg-descktop.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .top-menu {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .find-partner-title {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+
+    /* MEET A PARTENER SECTION */
+
+    .page-meet-partner {
+        margin-bottom: 73px;
+    }
+
+    .meet-partner-title {
+        margin-bottom: 36px;
+    }
+
+    .meet-partner-item:not(:only-child) {
+        margin-bottom: 0;
+    }
+
+}
