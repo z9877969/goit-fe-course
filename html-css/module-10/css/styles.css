@@ -18,7 +18,6 @@
 /* HEADER SECTION*/
 .header {
     max-width: 1920px;
-    width: 100vw;
     height: 1000px;
     background-image:  -webkit-gradient(linear, left bottom, left top, from(rgba(252, 227, 138, 0.9)), to(rgba(243, 129, 129, 0.9))), url(../img/bg-header@1x.jpg);
     background-image:  -webkit-linear-gradient(bottom, rgba(252, 227, 138, 0.9), rgba(243, 129, 129, 0.9)), url(../img/bg-header@1x.jpg);
@@ -102,6 +101,7 @@ HEADER
 }
 
 .main-menu__item:hover::after,
+.top-menu__link:focus .main-menu__item::after,
 .users-menu__item:hover::after {
     content: '';
     display: block;
@@ -113,17 +113,17 @@ HEADER
     top: 100%;
 }
 
-.main-menu__item:hover .top-menu__link,
-.main-menu__item:focus .top-menu__link {
-    color: #fce38a;
-    transition: color 0.3s;
-}
-
 .top-menu__link {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 500;
     color: #ffffff;
+}
+
+.main-menu__item:hover .top-menu__link,
+.top-menu__link:focus {
+    color: #fce38a;
+    transition: color 0.3s;
 }
 
 
@@ -156,6 +156,7 @@ HEADER
     fill: #ffffff;
 }
 
+.users-menu__link:focus .users-menu__icon,
 .users-menu__item:hover .users-menu__icon {
     fill: #fce38a;
     -webkit-transition: fill 0.3s;
@@ -289,6 +290,7 @@ SERVICES SECTION
     width: 32px;
     height: 32px;
     margin-right: 28px;
+    margin-left: 22px;
     fill: #95e1d3;
 }
 
