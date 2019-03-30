@@ -1,0 +1,34 @@
+.serv__item {
+    width: 382px;
+    display: flex;
+
+    &--bottom {
+        margin-bottom: 96px;
+    }
+
+    &-box {
+        width: 301px;
+    }
+
+    &-title {
+        margin: 0 0 14px;
+        text-transform: uppercase;
+        font-family: $primary-title-font;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.2em;
+        color: $secondary-title-color;
+    }
+    
+    &-descr {
+        margin: 0;
+        font-family: $primary-descr-font;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+        color: $primary-descr-color;
+    }
+}
+
+
+

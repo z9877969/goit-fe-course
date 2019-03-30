@@ -1,0 +1,26 @@
+.team__item {
+    width: 380px;
+
+    &-img {
+        width: 380px;
+        height: 470px;
+        margin: 0 0 30px;
+        background: $team-img-bg;
+        position: relative;
+    }
+
+    &:hover .team__container-img {
+        position: absolute;
+        transform: translate(-10px, -10px);
+        transition: transform linear 0.2s;
+    }
+
+    &:hover .team__container-img::after {
+        visibility: visible;
+    }
+}
+
+
+
+
+

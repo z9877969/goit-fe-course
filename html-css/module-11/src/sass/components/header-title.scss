@@ -1,0 +1,42 @@
+.header-title {
+    width: 900px;
+    margin: 0 auto;
+
+    &__prev {
+        font-size: 72px;
+        color: $primary-white-color;
+        text-align: center;
+        margin: 0 auto 58px;
+    }
+
+    &__main {
+        text-transform: uppercase;
+        font-size: 150px;
+        line-height: 140px;
+        color: $primary-white-color;
+        text-align: center;
+        margin: 0 auto 125px;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 40px;
+        margin: 0 auto;
+        border: 3px solid $primary-white-color;
+        text-transform: uppercase;
+
+        &--decor {
+            color: $primary-white-color;
+        }
+    }
+}
+
+
+
+
+
+
+

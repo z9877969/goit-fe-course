@@ -1,0 +1,51 @@
+/*
+   Import partials below
+*/
+
+@import 'helpers/variables.scss';
+@import 'normalize';
+@import 'fonts';
+@import 'base';
+
+
+
+// COMPONENTS
+
+// перевести классы в place hoders
+@import 'components/list'; 
+
+// перевести классы в place hoders
+@import 'components/link';
+
+// перевести классы в place hoders
+@import 'components/container';
+
+// перевести классы в place hoders
+@import 'components/menu__list';
+
+// перевести классы в place hoders
+@import 'components/base_P-H';
+
+
+@import 'components/header';
+@import 'components/logo';
+@import 'components/main-menu';
+@import 'components/top-menu';
+@import 'components/users-menu';
+@import 'components/header-title';
+@import 'components/title-prev';
+@import 'components/serv__title';
+@import 'components/serv__list';
+@import 'components/serv__item';
+@import 'components/serv__icon';
+@import 'components/team-section';
+@import 'components/team__title';
+@import 'components/team__list';
+@import 'components/team__item';
+@import 'components/team__container';
+@import 'components/social';
+@import 'components/team__name';
+@import 'components/team__post';
+@import 'components/footer-main';
+@import 'components/copyright';
+@import 'components/form-email';

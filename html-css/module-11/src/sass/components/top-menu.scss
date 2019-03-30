@@ -1,0 +1,15 @@
+.top-menu {
+
+    &__link {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 500;
+        color: $primary-white-color;
+    
+        &:hover,
+        &:focus {
+        color: $primary-accent-color;
+        transition: color 0.3s;
+        }
+    }
+}

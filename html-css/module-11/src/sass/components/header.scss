@@ -1,0 +1,25 @@
+.header {
+    max-width: 1920px;
+    height: 1000px;
+    background-image:  $primary-bg-gradient, url(../images/bg-header@1x.jpg);
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    margin-bottom: 46px;
+
+    &__menu {
+        margin-bottom: 174px;
+        padding-top: 26px;
+    }
+        
+    &__menu-top {
+        width: 620px;
+    }
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .header {
+        background-image:  $primary-bg-gradient, url(../images/bg-header@2x.jpg);
+    }
+}

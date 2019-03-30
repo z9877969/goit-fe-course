@@ -1,0 +1,25 @@
+.team__container {
+
+    &-img {
+
+        &::after {
+            content: '';
+            display: block;
+            width: 380px;
+            height: 470px;
+            background: $primary-bg-gradient;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            visibility: hidden;
+        }
+        
+        &:hover .social__list {
+            visibility: visible;
+        }
+    }
+
+}
+
+

@@ -1,0 +1,46 @@
+.team__title {
+
+    &-prev {
+        font-size: 24px;
+        color: $secondary-title-color;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &-main {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: $secondary-title-color;
+        text-align: center;
+        margin-bottom: 41px;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            margin: 40px auto 0;
+            background: $under-title-color;
+        }
+    }
+
+    &-descr {
+        width: 980px;
+        margin: 0 auto 90px;
+        padding: 0 10px;
+        text-align: center;
+        font-family: $primary-descr-font;
+        font-weight: 400;
+        line-height: 24px;
+        color: $primary-descr-color;
+    }
+
+}
+
+
+
+
+
+
+
+

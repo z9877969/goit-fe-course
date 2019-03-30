@@ -1,0 +1,28 @@
+.main-menu {
+    width: 490px;
+    margin-bottom: 2px;
+
+    &__item {
+        position: relative;
+    }
+
+    &__item:hover::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: $primary-accent-color;
+        position: absolute;
+        left: 0;
+        top: 100%;
+    }
+
+    
+}
+
+
+
+
+
+
+
