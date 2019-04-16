@@ -1,4 +1,3 @@
-'use strict'
 
 // Напиши скрипт имитирующий авторизацию администратора в панели управления.
 
@@ -9,12 +8,19 @@
 // В противном случае, то есть если ни одно из предыдущих условий не выполнилось, записать в message строку 'Доступ запрещен, неверный пароль!'
 // После всех проверок вывести в alert значение переменной message.
 
+'use strict'
+
 const ADMIN_PASSWORD = 'm4ng0h4ckz';
 let message;
 const inputPassword = prompt('Введите пароль!');
-if (!inputPassword) {
+
+if (inputPassword === '') {
+    message = 'Доступ запрещен, неверный пароль!';
+}
+else if (!inputPassword) {
     message = 'Отменено пользователем!';
-} else if (inputPassword === ADMIN_PASSWORD) {
+} 
+ else if (inputPassword === ADMIN_PASSWORD) {
     message = 'Добро пожаловать!';
 } else {
     message = 'Доступ запрещен, неверный пароль!';

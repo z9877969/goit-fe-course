@@ -1,4 +1,3 @@
-'use strict'
 
 /*
 Пользователь может оформить доставку товара к себе в страну, указав ее при посещении страницы в prompt. Учти, что пользователь может ввести имя страны не только буквами нижнего регистра, а к примеру 'кИтАЙ'.
@@ -17,42 +16,38 @@
 PS: используй switch
 */
 
-let inputUserDelivery = prompt('Укажите страну доставки');
-let priceDelivery;
-let message;
+'use strict'
 
-if (!inputUserDelivery) {
-    message = 'Отменено пользователем!';
+let inputUserDelivery = prompt('Укажите страну доставки');
+const priceDeliveryChina = 100;
+const priceDeliverySouthAmerica = 250;
+const priceDeliveryAustralia = 170;
+const priceDeliveryIndia = 80;
+const priceDeliveryJamaica = 120;
+
+if (inputUserDelivery === '') {
+    console.log('В вашей стране доставка не доступна');
+} else if (!inputUserDelivery) {
+    console.log('Отменено пользователем!');
 } else {
     let inputDeliveryToLower = inputUserDelivery.toLowerCase();
     switch(inputDeliveryToLower) {
         case 'китай':
-            inputUserDelivery = inputUserDelivery.toUpperCase();
-            priceDelivery = 100;
-            message = `Доставка в ${inputUserDelivery} будет стоить ${priceDelivery} кредитов`;
+            console.log(`Доставка в ${inputUserDelivery.toUpperCase()} будет стоить ${priceDeliveryChina} кредитов`);
             break;
         case 'южная америка':
-            inputUserDelivery = inputUserDelivery.toUpperCase();
-            priceDelivery = 250;
-            message = `Доставка в ${inputUserDelivery} будет стоить ${priceDelivery} кредитов`;
+            console.log(`Доставка в ${inputUserDelivery.toUpperCase()} будет стоить ${priceDeliverySouthAmerica} кредитов`);
             break;
         case 'австралия':
-            inputUserDelivery = inputUserDelivery.toUpperCase();
-            priceDelivery = 170;
-            message = `Доставка в ${inputUserDelivery} будет стоить ${priceDelivery} кредитов`;
+            console.log(`Доставка в ${inputUserDelivery.toUpperCase()} будет стоить ${priceDeliveryAustralia} кредитов`);
             break;
         case 'индия':
-            inputUserDelivery = inputUserDelivery.toUpperCase();
-            priceDelivery = 80;
-            message = `Доставка в ${inputUserDelivery} будет стоить ${priceDelivery} кредитов`;
+            console.log(`Доставка в ${inputUserDelivery.toUpperCase()} будет стоить ${priceDeliveryIndia} кредитов`);
             break;
         case 'ямайка':
-            inputUserDelivery = inputUserDelivery.toUpperCase();
-            priceDelivery = 120;
-            message = `Доставка в ${inputUserDelivery} будет стоить ${priceDelivery} кредитов`;
+            console.log(`Доставка в ${inputUserDelivery.toUpperCase()} будет стоить ${priceDeliveryJamaica} кредитов`);
             break;
         default: 
-            message = 'В вашей стране доставка не доступна';
+            console.log('В вашей стране доставка не доступна');
     }
 }
-console.log(message);

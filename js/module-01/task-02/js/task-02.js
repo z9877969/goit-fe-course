@@ -1,4 +1,3 @@
-'use strict'
 /*
 На счету пользователя есть 23580 кредитов, значение хранится в переменной credits (создай и присвой). Пользователь решает купить ремонтных дроидов, которые стоят по 3000 кредитов за штуку. Цена одного дроида хранится в переменной pricePerDroid (создай и присвой).
 
@@ -13,27 +12,20 @@
 в противном случае необходимо посчитать остаток кредитов на счету и вывести сообщение 'Вы купили [число] дроидов, на счету осталось [число] кредитов.'.
 */
 
+'use strict'
 
-let credits = 23580;
+const credits = 23580;
 const pricePerDroid = 3000;
 const numberDroid = prompt('Укажите сколько дроидов вы хотите приобрести:');
-let message;
 
 if (!numberDroid) {
-    message = 'Отменено пользователем!';
+    console.log('Отменено пользователем!');
 } else {
-    if (Number.isNaN(Number(numberDroid)) === true) {
-        message = ('Нужно ввести числовое значение! Нажмите F5 или перезагрузите страницу, чтобы повторить попытку.');
-    } else if (numberDroid % 1 !== 0 || numberDroid < 0 ) {
-        message = ('Дроид не продается по частях и отрицательным количеством! Нажмите F5 или перезагрузите страницу, чтоы повторить попытку и введите целое положительное число.');
+    const totalPrice = pricePerDroid * numberDroid;
+    if (totalPrice > credits) {
+        console.log('Недостаточно средств на счету!');
     } else {
-        const totalPrice = pricePerDroid * numberDroid;
-        if (totalPrice <= credits) {
-            credits = credits - totalPrice;
-            message = (`Вы купили ${numberDroid} дроидов, на счету осталось ${credits} кредитов.`);
-        } else {
-            message = ('Недостаточно средств на счету!');
-        }
-    } 
+        const totalCredits = credits - totalPrice;
+        console.log(`Вы купили ${numberDroid} дроидов, на счету осталось ${totalCredits} кредитов.`);        
+    }
 }
-console.log(message);
