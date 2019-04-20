@@ -25,13 +25,10 @@ const priceDeliveryAustralia = 170;
 const priceDeliveryIndia = 80;
 const priceDeliveryJamaica = 120;
 
-if (inputUserDelivery === '') {
-    console.log('В вашей стране доставка не доступна');
-} else if (!inputUserDelivery) {
+if (inputUserDelivery === null) {
     console.log('Отменено пользователем!');
 } else {
-    let inputDeliveryToLower = inputUserDelivery.toLowerCase();
-    switch(inputDeliveryToLower) {
+    switch(inputUserDelivery.toLowerCase()) {
         case 'китай':
             console.log(`Доставка в ${inputUserDelivery.toUpperCase()} будет стоить ${priceDeliveryChina} кредитов`);
             break;
