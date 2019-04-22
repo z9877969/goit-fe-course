@@ -18,7 +18,7 @@ const numbers = [];
 let total = 0;
 
 for(let i = 0; i < Infinity; i += 1) {
-    input = prompt('vvedite 4islo');
+    input = prompt('Введите число!');
     if (input === null) {
         break;
     } else if (
