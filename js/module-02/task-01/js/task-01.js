@@ -25,7 +25,8 @@ do {
         Number.isNaN(Number(input)) || 
         input === '' || 
         input === ' ' || 
-        Number(input) === 0 && input.length > 1 && !input.includes('0') || 
+        Number(input) === 0 && input.length > 1 && !input.includes('0') ||
+        input.includes(' 00') || 
         input.length > 1 && input.indexOf('0') === 0 && input.indexOf('.') !== 1) {
         alert('Было введено не число, попробуйте еще раз');
     }  else {
