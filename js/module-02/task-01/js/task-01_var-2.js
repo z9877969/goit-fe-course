@@ -16,18 +16,23 @@ let total = 0;
 let input;
 const numbers = [];
 let total = 0;
-for(input = prompt('Введите число!'); input !== null;) {
-    if(
-    Number.isNaN(Number(input)) || 
-    input === '' || 
-    input === ' ' || 
-    Number(input) === 0 && input.length > 1 || 
-    input.length > 1 && input.indexOf('0') === 0 && input.indexOf('.') !== 1) {
-        alert('Было введено не число, попробуйте еще раз');
-    } else {
-        numbers.push(input);
-        total += Number(input);
-    }
+
+do {
     input = prompt('Введите число!');
+    if (input === null) {
+        break;
+    } else if (
+        Number.isNaN(Number(input)) || 
+        input === '' || 
+        input === ' ' || 
+        Number(input) === 0 && input.length > 1 && !input.includes('0') || 
+        input.length > 1 && input.indexOf('0') === 0 && input.indexOf('.') !== 1) {
+        alert('Было введено не число, попробуйте еще раз');
+    }  else {
+        numbers.push(Number(input));
+    }
+} while (true)
+for(let number of numbers) {
+    total += number;
 }
 console.log(`Общая сумма чисел равна ${total}`);
