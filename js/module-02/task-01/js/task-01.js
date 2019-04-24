@@ -22,18 +22,15 @@ do {
     if (input === null) {
         break;
     } else if (
-        Number.isNaN(Number(input)) || 
-        input === '' || 
-        input === ' ' || 
-        Number(input) === 0 && input.length > 1 && !input.includes('0') ||
-        input.includes(' 00') || 
-        input.length > 1 && input.indexOf('0') === 0 && input.indexOf('.') !== 1) {
+        Number.isNaN(Number(input))) {
         alert('Было введено не число, попробуйте еще раз');
     }  else {
         numbers.push(Number(input));
     }
 } while (true)
-for(let number of numbers) {
-    total += number;
+if (numbers.length) {
+    for(let number of numbers) {
+        total += number;
+    }
+    console.log(`Общая сумма чисел равна ${total}`);
 }
-console.log(`Общая сумма чисел равна ${total}`);

@@ -19,7 +19,7 @@ const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
 let attemptsLeft = 3;
 
 while(attemptsLeft) {
-    attemptsLeft = attemptsLeft - 1;
+    attemptsLeft -= 1;
     
     let inputPassword = prompt('Введите пароль!');
     
