@@ -50,16 +50,9 @@ addLogin(logins, 'jqueryisextremelyfast'); // 'Ошибка! Логин долж
 
 const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
-const isLoginValid = function (login) {
-  return login.length >= 4 && login.length <= 16 ? true : false;
-};
+const isLoginValid = (login) => {return login.length >= 4 && login.length <= 16};
 
-const isLoginUnique = function (allLogins, login) {
-  for (const el of allLogins) {
-    if (login === el) return false;
-  }
-  return true;
-};
+const isLoginUnique = (allLogins, login) => {return !allLogins.includes(login)}
 
 const addLogin = function (allLogins, login) {
   if (isLoginValid(login)) {
