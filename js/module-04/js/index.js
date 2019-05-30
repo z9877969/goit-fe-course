@@ -113,10 +113,7 @@ const notepad = {
         this.notes.splice(this.notes.indexOf(this.finedNoteById(id)), 1);
     },
     updateNoteContent(id, updatedContent) {
-        for (let key in updatedContent) {
-            this.finedNoteById(id)[key] = updatedContent[key];
-        };
-        return this.finedNoteById(id);
+        return Object.assign(this.finedNoteById(id), updatedContent);
     },
     updateNotePriority(id, priority) {
         this.finedNoteById(id).priority = priority;
