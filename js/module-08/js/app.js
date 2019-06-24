@@ -103,28 +103,31 @@ class Notepad {
     };
     return resultArr;
   }
-
-  static priorityStatus = {
-
-  }
 }
 
 const notepad = new Notepad(initialNotes);
 
 const noteListLink = document.querySelector('ul.note-list');
 
-const createTag = ({tagName, classNameArr, atributesObj, dataAtributesObj, content}) => {
+const createDomElement = ({tagName, classNameArr, atributesObj, dataAtributesObj, content}) => {
   const element = document.createElement(tagName);
   if (classNameArr) {element.classList.add(...classNameArr);}
   
   // add data-atribbute
   if (dataAtributesObj) {
-    Object.entries(dataAtributesObj).forEach(el => element.dataset[el[0]] = el[1])
+    Object.entries(dataAtributesObj).forEach(dataAtribute => { 
+      const [dataKey, dataValue] = dataAtribute;
+      element.dataset[dataKey] = dataValue})
   };
   // add data-atribbute -END
   
   if (atributesObj) {
-    Object.entries(atributesObj).forEach(el => element.setAttribute(el[0], el[1]))
+    Object.entries(atributesObj).forEach(
+      atribute => {
+        const [atributeKey, atributeValue] = atribute;
+        element.setAttribute(atributeKey, atributeValue);
+      }
+    )
   };
   
   if (content) {element.textContent = content};
@@ -138,7 +141,7 @@ const createActionButton = (actionLink, iconLink, container) => {
       classNameArr:['action'],
       dataAtributesObj: {action: actionLink,},
     };
-    const actionElement = createTag(dataActionElement);
+    const actionElement = createDomElement(dataActionElement);
     container.append(actionElement);
   
     const dataIconDecrease = {
@@ -146,7 +149,7 @@ const createActionButton = (actionLink, iconLink, container) => {
       classNameArr:['material-icons', 'action__icon'],
       content: iconLink,
     };
-    const iconDecrease = createTag(dataIconDecrease);
+    const iconDecrease = createDomElement(dataIconDecrease);
     actionElement.append(iconDecrease);
 }
 
@@ -155,7 +158,7 @@ const createNoteContent = (container, note) => {
     tagName: 'div',
     classNameArr: ['note__content'],
   };
-  const noteContent = createTag(dataNoteContent);
+  const noteContent = createDomElement(dataNoteContent);
   container.append(noteContent);
 
   const dataNoteTitle = {
@@ -163,7 +166,7 @@ const createNoteContent = (container, note) => {
     classNameArr: ['note__title'],
     content: note.title,
   };
-  const noteTitle = createTag(dataNoteTitle);
+  const noteTitle = createDomElement(dataNoteTitle);
   noteContent.append(noteTitle);
 
   const dataNoteBody = {
@@ -171,7 +174,7 @@ const createNoteContent = (container, note) => {
     classNameArr: ['note__body'],
     content: note.body,
   };
-  const noteBody = createTag(dataNoteBody);
+  const noteBody = createDomElement(dataNoteBody);
   noteContent.append(noteBody);
 
   return noteContent;
@@ -182,7 +185,7 @@ const createNoteFooter = (container, note) => {
     tagName: 'footer',
     classNameArr:['note__footer'],
   };
-  const noteFooter = createTag(dataNoteFooter);
+  const noteFooter = createDomElement(dataNoteFooter);
   container.append(noteFooter);
 
   // SECTION increase/decrease priority
@@ -190,7 +193,7 @@ const createNoteFooter = (container, note) => {
     tagName: 'section',
     classNameArr:['note__section'],
   };
-  const sectionPriority = createTag(dataSectionPriority);
+  const sectionPriority = createDomElement(dataSectionPriority);
   noteFooter.append(sectionPriority);
 
   const actionDecrease = createActionButton(
@@ -210,7 +213,7 @@ const createNoteFooter = (container, note) => {
     classNameArr:['note__priority'],
     content: `Priority: ${note.priority}`,
   };
-  const priorityStatus = createTag(dataPriorityStatus);
+  const priorityStatus = createDomElement(dataPriorityStatus);
   sectionPriority.append(priorityStatus);
   // SECTION increase/decrease priority -END
   
@@ -219,7 +222,7 @@ const createNoteFooter = (container, note) => {
     tagName: 'section',
     classNameArr:['note__section'],
   };
-  const sectionEdit = createTag(dataSectionEdit);
+  const sectionEdit = createDomElement(dataSectionEdit);
   noteFooter.append(sectionEdit);
 
   const actionEdit = createActionButton(
@@ -244,7 +247,7 @@ const createListItem = (note) => {
     classNameArr: ['note-list__item'],
     dataAtributesObj: {id: note.id},
   }
-  const item = createTag(dataItem);
+  const item = createDomElement(dataItem);
   
   createNoteContent(item, note);
   createNoteFooter(item,note);
