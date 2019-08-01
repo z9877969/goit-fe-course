@@ -14,8 +14,6 @@ const addListItem = (listRef, note) => {
 }
 const notyf = new Notyf();
 
-view.renderNoteList(view.noteListLink, notepad.notes);
-
 export const refs = {
     formNoteEditor: document.querySelector('form.note-editor'),
     formInput: document.querySelector('input.note-editor__input'),
