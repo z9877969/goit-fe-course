@@ -6,19 +6,13 @@ import {
     createNewNote,
     removeListItem,
     search,
-    handleOpenEditor,
-    initNotes
+    handleOpenEditor
 } from './js/app';
-import {requestGet} from './js/services/api';
 
-// requestGet().then(notes => console.log(notes));
-
-
-
-const notepad = new Notepad(initNotes);
+const notepad = new Notepad();
 const view = new View();
 
-view.renderNoteList(view.noteListLink, notepad.notes);
+notepad.notes.then(notes => view.renderNoteList(view.noteListLink, notes));
 
 // Listners
 refs.formNoteEditor.addEventListener('submit', createNewNote);

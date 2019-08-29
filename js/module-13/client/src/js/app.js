@@ -1,23 +1,12 @@
 import View from './view';
 import Notepad from './notepad-model';
-// import notes from '../assets/notes.json';
 import {PRIORITY_TYPES} from './utils/constants';
 import MicroModal from 'micromodal';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
-import {requestGet} from './services/api';
 
-// const pushNotesToLS = (key, value) => localStorage.setItem(key, JSON.stringify(value));
-// const getNotesToLS = key => JSON.parse(localStorage.getItem(key));
-
-
-// const notepad = requestGet()
-//   .then(notes => new Notepad(notes));
-// const view = new View();
-
-
-
-// const shortid = require('shortid');
+const notepad = new Notepad();
+const view = new View();
 const addListItem = (listRef, note) => {
   listRef.insertAdjacentHTML('beforeend', note);
 }
@@ -29,13 +18,7 @@ export const refs = {
     formTextArea: document.querySelector('textarea.note-editor__input'),
     searchInput: document.querySelector('form.search-form input'),
     openNoteEditorModal: document.querySelector('button[data-action="open-editor"]'),
-  }
-
-export const initNotes = requestGet() ? requestGet() : notes;
-
-const notepad = new Notepad(initNotes);
-
-console.log(notepad);
+}
 
 // handlers
 export const createNewNote = (event) => {
@@ -43,27 +26,24 @@ export const createNewNote = (event) => {
     event.preventDefault();
     return notyf.error('Необходимо заполнить все поля!');
   };
-  
-  const newNote = {};  
-  // newNote.id = shortid.generate();
-  newNote.title = refs.formInput.value;
-  newNote.body = refs.formTextArea.value;
-  newNote.priority = PRIORITY_TYPES.LOW;
-  notepad.saveNote(newNote)
-    .then(savedNote => {
-      pushNotesToLS('myNotes', notepad.notes);
-      addListItem(view.noteListLink, view.createListItemTemplate(savedNote));
-    });
 
   // that the form not reset
   event.preventDefault();
-  // that the form not reset -END
-
-  refs.formNoteEditor.reset();
-  MicroModal.close('note-editor-modal');
-  notyf.success('Заметка успешно добавлена!');
-
-  return newNote;  
+  // that the form not reset -END  
+  
+  const newNote = {}; 
+  newNote.title = refs.formInput.value;
+  newNote.body = refs.formTextArea.value;
+  newNote.priority = PRIORITY_TYPES.LOW;
+  
+  return notepad.saveNote(newNote)
+    .then(savedNote => {
+      addListItem(view.noteListLink, view.createListItemTemplate(savedNote));
+      refs.formNoteEditor.reset();
+      MicroModal.close('note-editor-modal');
+      notyf.success('Заметка успешно добавлена!');
+      return savedNote;  
+    });
 }
 
 export const removeListItem = ({target}) => {
@@ -71,9 +51,7 @@ export const removeListItem = ({target}) => {
     const idDeletedNote = target.closest('.note-list__item').dataset.id;
     
     notepad.deleteNote(idDeletedNote)
-    .then(newNotes => {
-      console.log(newNotes);
-      // pushNotesToLS('myNotes', newNotes);
+    .then(() => {
       target.closest('li').remove();
       notyf.success('Заметка успешно удалена!');
     });    

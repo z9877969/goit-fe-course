@@ -1,10 +1,4 @@
 import noteTemplate from '../template/note.hbs';
-import {requestGet} from './services/api';
-    
-const createNoteList = notes => {
-  const list = notes.reduce((acc, note) => acc + noteTemplate(note), '');
-  return list;
-}
 
 export default class View {
     constructor() {
@@ -23,9 +17,7 @@ export default class View {
     }
       
     renderNoteList(listRef, notes) {
-      const noteListTemplate = requestGet()
-        .then(notes => notes.reduce((acc, note) => acc + this.createListItemTemplate(note), ''));
-      noteListTemplate
-        .then(tpl => listRef.insertAdjacentHTML('beforeend', tpl));
+      const noteListTemplate = notes.reduce((acc, note) => acc + this.createListItemTemplate(note), '');
+      listRef.insertAdjacentHTML('beforeend', noteListTemplate);
     };
 }
